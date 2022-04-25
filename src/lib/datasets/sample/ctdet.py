@@ -35,7 +35,7 @@ class CTDetDataset(data.Dataset):
     anns = self.coco.loadAnns(ids=ann_ids)
     num_objs = min(len(anns), self.max_objs)
     print(img_path)
-    img = cv2.imread(img_path)
+    img = cv2.imread("/content/CenterNet/data/HT/train_HT21/000001.jpg")
     print(img)
 
     height, width = img.shape[0], img.shape[1]
