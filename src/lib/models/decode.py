@@ -461,7 +461,7 @@ def ddd_decode(heat, rot, depth, dim, wh=None, reg=None, K=40):
       
     return detections
 
-def ctdet_decode(heat, wh, reg=None, cat_spec_wh=False, K=300):
+def ctdet_decode(heat, wh, reg=None, cat_spec_wh=False, K=350):
     batch, cat, height, width = heat.size()
 
     # heat = torch.sigmoid(heat)

@@ -12,7 +12,7 @@ import torch.utils.data as data
 
 class HT(data.Dataset):
   num_classes = 1
-  default_resolution = [512, 512]
+  default_resolution = [720, 410]
   mean = np.array([0.40789654, 0.44719302, 0.47026115],
                    dtype=np.float32).reshape(1, 1, 3)
   std  = np.array([0.28863828, 0.27408164, 0.27809835],
@@ -29,8 +29,8 @@ class HT(data.Dataset):
     else:
       self.annot_path = os.path.join(
         self.data_dir, 'annotations',
-        'train_dataset.json').format(split)
-    self.max_objs = 128
+        '{}_dataset.json').format(split)
+    self.max_objs = 300
     self.class_name = ['head']
     self._valid_ids = [0]
     self.cat_ids = {v: i for i, v in enumerate(self._valid_ids)}
