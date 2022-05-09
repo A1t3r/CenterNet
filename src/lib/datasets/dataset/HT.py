@@ -98,6 +98,7 @@ class HT(data.Dataset):
     self.save_results(results, save_dir)
     coco_dets = self.coco.loadRes('{}/results.json'.format(save_dir))
     coco_eval = COCOeval(self.coco, coco_dets, "bbox")
+    coco_eval.params.maxDets = [300]
     coco_eval.evaluate()
     coco_eval.accumulate()
     coco_eval.summarize()
